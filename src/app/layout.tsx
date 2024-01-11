@@ -1,4 +1,5 @@
 import "~/styles/globals.css";
+import { cn } from "src/lib/utils";
 
 import { Inter } from "next/font/google";
 import { cookies } from "next/headers";
@@ -22,8 +23,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
+    <html lang="en" className="light">
+      <body
+        className={cn(
+          "grainy min-h-screen font-sans antialiased",
+          inter.className,
+        )}
+      >
         <TRPCReactProvider cookies={cookies().toString()}>
           {children}
         </TRPCReactProvider>
