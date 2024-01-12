@@ -6,7 +6,8 @@
  * TL;DR - This is where all the tRPC server stuff is created and plugged in. The pieces you will
  * need to use are documented accordingly near the end.
  */
-import { initTRPC } from "@trpc/server";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
+import { TRPCError, initTRPC } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
 
@@ -74,3 +75,23 @@ export const createTRPCRouter = t.router;
  * are logged in.
  */
 export const publicProcedure = t.procedure;
+
+const middleware = t.middleware;
+
+const isAuth = middleware(async (opts) => {
+  const { getUser } = getKindeServerSession();
+  const user = await getUser();
+
+  if (!user?.id) {
+    throw new TRPCError({ code: "UNAUTHORIZED" });
+  }
+
+  return opts.next({
+    ctx: {
+      userId: user.id,
+      user,
+    },
+  });
+});
+
+export const privateProcedure = t.procedure.use(isAuth);
