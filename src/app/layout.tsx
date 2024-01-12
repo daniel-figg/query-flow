@@ -7,6 +7,8 @@ import { cookies } from "next/headers";
 import { TRPCReactProvider } from "~/trpc/react";
 import NavBar from "~/components/NavBar";
 
+import "react-loading-skeleton/dist/skeleton.css";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
