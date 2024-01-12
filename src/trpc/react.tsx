@@ -35,13 +35,15 @@ export function TRPCReactProvider(props: {
           },
         }),
       ],
-    })
+    }),
   );
 
   return (
     <QueryClientProvider client={queryClient}>
       <api.Provider client={trpcClient} queryClient={queryClient}>
-        {props.children}
+        <QueryClientProvider client={queryClient}>
+          {props.children}
+        </QueryClientProvider>
       </api.Provider>
     </QueryClientProvider>
   );
