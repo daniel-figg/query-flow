@@ -68,3 +68,22 @@
   /* dark */
   /* background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwAgMAAAAqbBEUAAAACVBMVEUAAAAcGhwUFhzUXq4QAAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAWJJREFUKJEVkk2qRTEIg91kBJ1baPej4J1b6Fnly5v1R9Pks2K/SVO1wZQE6mbOvjUmBVdNt33cxEN3pN23g2UZFl4fgJDMvlwcVo7YykA2Enol7olI3Y5KMbVfuyE6TLDrQRUVMMnKM7aMd9ywXT0KvBdHO7dQL0hrJGWBwpV/X+pw1/tkDGwGVkTIMl9GFYNu4SGtYKENslWXMlRppiA2tOdlB10PPNuD1U8sR3/+3waXtEOferOaAofCif2dCjk0OKFhbsxjb50ci/cIBOVQpln/SVmDIL1i0thqtvmMYWQxTqjF9h7GjoAGkQCcgtJr2xo+mhV6TcnDW9xOLEzOAyNQZtHbNZRUjW/i/bYu0V7UqW7GklFLOo3VewlhMokfmuJ85nb0DxgQVRI/SXL8I7cJmo7ITeXgI7LfKdRjzwK/Syr5iQ9h4VghIJWxH6DVm0T38ib3+K2U/mg3Pzcy/gOGe/3lrbtx5QAAAABJRU5ErkJggg==); */
 }
+
+.scrollbar-w-2::-webkit-scrollbar {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+.scrollbar-track-blue-lighter::-webkit-scrollbar-track {
+  --bg-opacity: 0.5;
+  background-color: #00000015;
+}
+
+.scrollbar-thumb-blue::-webkit-scrollbar-thumb {
+  --bg-opacity: 0.5;
+  background-color: #13131374;
+}
+
+.scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+}
