@@ -8,6 +8,7 @@ import { TRPCReactProvider } from "~/trpc/react";
 import NavBar from "~/components/NavBar";
 
 import "react-loading-skeleton/dist/skeleton.css";
+import "simplebar-react/dist/simplebar.min.css";
 
 const inter = Inter({
   subsets: ["latin"],
