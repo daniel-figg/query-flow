@@ -120,6 +120,9 @@ const UploadDropzone = ({ isSubscribed }: { isSubscribed: boolean }) => {
                   <Progress
                     value={uploadProgress}
                     className="h-1 w-full bg-zinc-200"
+                    indicatorColor={
+                      uploadProgress === 100 ? "bg-green-500" : ""
+                    }
                   />
                   {uploadProgress === 100 ? (
                     <div className="flex items-center justify-center gap-1 pt-2 text-center text-sm text-zinc-700">
