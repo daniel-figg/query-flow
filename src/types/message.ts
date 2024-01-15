@@ -5,19 +5,11 @@ type RouterOutput = inferRouterOutputs<AppRouter>;
 
 type Messages = RouterOutput["chat"]["getFileMessages"]["messages"];
 
-type OmitText = Omit<Messages[number], "text">;
-
-type OmitCreatedAt = Omit<Messages[number], "createdAt">;
+type OmitText = Omit<Messages[number], "text" | "createdAt">;
 
 type ExtendedText = {
-  text: string | JSX.Element | Element;
-};
-
-type ExtendedCreatedAt = {
+  text: string | JSX.Element;
   createdAt: string | Date;
 };
 
-export type ExtendedMessage = OmitText &
-  ExtendedText &
-  OmitCreatedAt &
-  ExtendedCreatedAt;
+export type ExtendedMessage = OmitText & ExtendedText;

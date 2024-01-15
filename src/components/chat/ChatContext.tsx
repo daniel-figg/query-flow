@@ -78,10 +78,9 @@ export const ChatContextProvider = ({ fileId, children }: Props) => {
 
           const latestPage = newPages[0]!;
 
-          /* todo: fix ts error */
           latestPage.messages = [
             {
-              createdAt: new Date().toISOString(),
+              createdAt: new Date(),
               id: crypto.randomUUID(),
               text: message,
               isUserMessage: true,
@@ -133,7 +132,6 @@ export const ChatContextProvider = ({ fileId, children }: Props) => {
         // append chunk to the actual message
         utils.chat.getFileMessages.setInfiniteData(
           { fileId, limit: INFINITE_QUERY_LIMIT },
-          /* todo: fix ts error */
           (old) => {
             if (!old) return { pages: [], pageParams: [] };
 
@@ -148,7 +146,7 @@ export const ChatContextProvider = ({ fileId, children }: Props) => {
                 if (!isAiResponseCreated) {
                   updatedMessages = [
                     {
-                      createdAt: new Date().toISOString(),
+                      createdAt: new Date(),
                       id: "ai-response",
                       text: accResponse,
                       isUserMessage: false,
@@ -186,7 +184,7 @@ export const ChatContextProvider = ({ fileId, children }: Props) => {
       utils.chat.getFileMessages.setData(
         { fileId },
         /* todo: fix ts error */
-        { messages: context?.previousMessages ?? [] },
+        { messages: context?.previousMessages ?? [], nextCursor: undefined },
       );
     },
     onSettled: async () => {

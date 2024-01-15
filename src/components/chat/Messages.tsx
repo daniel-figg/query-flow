@@ -64,7 +64,6 @@ const Messages = ({ fileId }: MessagesProps) => {
             combinedMessages[i - 1]?.isUserMessage ===
             combinedMessages[i]?.isUserMessage;
 
-          /* todo: fix message ts error */
           if (i === combinedMessages.length - 1) {
             return (
               <Message
