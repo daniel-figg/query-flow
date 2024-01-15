@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en" className="light">
       <body
         className={cn(
-          "grainy min-h-screen font-sans antialiased",
+          "bg-grainy min-h-screen font-sans antialiased",
           inter.className,
         )}
       >
