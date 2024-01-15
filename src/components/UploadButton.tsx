@@ -53,8 +53,6 @@ const UploadDropzone = () => {
 
         const progressInterval = startSimulatedProgress();
 
-        /* todo: handle file uploading */
-
         const res = await startUpload(acceptedFile);
 
         if (!res) {
