@@ -9,6 +9,7 @@ import NavBar from "~/components/NavBar";
 
 import "react-loading-skeleton/dist/skeleton.css";
 import "simplebar-react/dist/simplebar.min.css";
+import { ThemeProvider } from "~/components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,10 +34,17 @@ export default function RootLayout({
           inter.className,
         )}
       >
-        <TRPCReactProvider cookies={cookies().toString()}>
-          <NavBar />
-          {children}
-        </TRPCReactProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <TRPCReactProvider cookies={cookies().toString()}>
+            <NavBar />
+            {children}
+          </TRPCReactProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

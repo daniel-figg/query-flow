@@ -25,7 +25,7 @@ const ChatWrapper = ({ fileId }: ChatWrapperProps) => {
 
   if (isLoading)
     return (
-      <div className="relative flex min-h-full flex-col justify-between gap-2 divide-y divide-zinc-200 bg-zinc-50">
+      <div className="relative flex min-h-full flex-col justify-between gap-2 divide-y divide-border bg-background">
         <div className="mb-28 flex flex-1 flex-col items-center justify-center">
           <div className="flex flex-col items-center gap-2">
             <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
@@ -42,7 +42,7 @@ const ChatWrapper = ({ fileId }: ChatWrapperProps) => {
 
   if (data?.status === "PROCESSING")
     return (
-      <div className="relative flex min-h-full flex-col justify-between gap-2 divide-y divide-zinc-200 bg-zinc-50">
+      <div className="relative flex min-h-full flex-col justify-between gap-2 divide-y divide-border bg-background">
         <div className="mb-28 flex flex-1 flex-col items-center justify-center">
           <div className="flex flex-col items-center gap-2">
             <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
@@ -57,7 +57,7 @@ const ChatWrapper = ({ fileId }: ChatWrapperProps) => {
 
   if (data?.status === "FAILED")
     return (
-      <div className="relative flex min-h-full flex-col justify-between gap-2 divide-y divide-zinc-200 bg-zinc-50">
+      <div className="relative flex min-h-full flex-col justify-between gap-2 divide-y divide-border bg-background">
         <div className="mb-28 flex flex-1 flex-col items-center justify-center">
           <div className="flex flex-col items-center gap-2">
             <XCircle className="h-8 w-8 text-red-500" />
@@ -84,7 +84,7 @@ const ChatWrapper = ({ fileId }: ChatWrapperProps) => {
 
   return (
     <ChatContextProvider fileId={fileId}>
-      <div className="relative flex min-h-full flex-col justify-between gap-2 divide-y divide-zinc-200 bg-zinc-50">
+      <div className="relative flex min-h-full flex-col justify-between gap-2 divide-y divide-border bg-background">
         <div className="mb-28 flex flex-1 flex-col justify-between">
           <Messages fileId={fileId} />
         </div>

@@ -38,7 +38,7 @@ const Page = async ({ params }: PageProps) => {
           </div>
         </div>
 
-        <div className="flex-[0.75] shrink-0 border-t border-gray-200 lg:w-96 lg:border-l lg:border-t-0">
+        <div className="flex-[0.75] shrink-0 border-t border-border lg:w-96 lg:border-l lg:border-t-0">
           <ChatWrapper fileId={fileid} />
         </div>
       </div>

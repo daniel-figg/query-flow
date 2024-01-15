@@ -31,7 +31,7 @@ const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
 
       {isOpen ? (
         <div className="fixed inset-0 z-0 w-full animate-in fade-in-20 slide-in-from-top-5">
-          <ul className="absolute grid w-full gap-3 border-b border-zinc-200 bg-white px-10 pb-8 pt-20 shadow-xl">
+          <ul className="absolute grid w-full gap-3 border-b border-border bg-background px-10 pb-8 pt-20 shadow-xl">
             {!isAuth ? (
               <>
                 <li>

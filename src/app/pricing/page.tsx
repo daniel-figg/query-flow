@@ -93,10 +93,14 @@ const Page = async () => {
               return (
                 <div
                   key={plan}
-                  className={cn("relative rounded-2xl bg-white shadow-lg", {
-                    "border-2 border-blue-600 shadow-blue-200": plan === "Pro",
-                    "border border-gray-200": plan !== "Pro",
-                  })}
+                  className={cn(
+                    "relative rounded-2xl bg-background shadow-lg",
+                    {
+                      "border-2 border-blue-600 shadow-blue-200":
+                        plan === "Pro",
+                      "border border-border": plan !== "Pro",
+                    },
+                  )}
                 >
                   {plan === "Pro" && (
                     <div className="absolute -top-5 left-0 right-0 mx-auto w-32 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 px-3 py-2 text-sm font-medium text-white">
@@ -115,7 +119,7 @@ const Page = async () => {
                     <p className="text-gray-500">per month</p>
                   </div>
 
-                  <div className="flex h-20 items-center justify-center border-b border-t border-gray-200 bg-gray-50">
+                  <div className="flex h-20 items-center justify-center border-b border-t border-border bg-background">
                     <div className="flex items-center space-x-1">
                       <p>{quota.toLocaleString()} PDFs/mo included</p>
 
@@ -135,7 +139,7 @@ const Page = async () => {
                       <li key={text} className="flex space-x-5">
                         <div className="flex-shrink-0">
                           {negative ? (
-                            <Minus className="h-6 w-6 text-gray-300" />
+                            <Minus className="h-6 w-6 text-gray-500" />
                           ) : (
                             <Check className="h-6 w-6 text-blue-500" />
                           )}
@@ -143,8 +147,8 @@ const Page = async () => {
                         {footnote ? (
                           <div className="flex items-center space-x-1">
                             <p
-                              className={cn("text-gray-600", {
-                                "text-gray-400": negative,
+                              className={cn("text-foreground", {
+                                "text-gray-500": negative,
                               })}
                             >
                               {text}
@@ -160,8 +164,8 @@ const Page = async () => {
                           </div>
                         ) : (
                           <p
-                            className={cn("text-gray-600", {
-                              "text-gray-400": negative,
+                            className={cn("text-foreground", {
+                              "text-gray-500": negative,
                             })}
                           >
                             {text}
@@ -170,7 +174,7 @@ const Page = async () => {
                       </li>
                     ))}
                   </ul>
-                  <div className="border-t border-gray-200" />
+                  <div className="border-t border-border" />
                   <div className="p-5">
                     {plan === "Free" ? (
                       <Link
