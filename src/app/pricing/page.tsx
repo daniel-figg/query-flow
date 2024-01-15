@@ -88,7 +88,7 @@ const Page = async () => {
             {pricingItems.map(({ plan, tagline, quota, features }) => {
               const price =
                 PLANS.find((p) => p.slug === plan.toLowerCase())?.price
-                  .amount || 0;
+                  .amount ?? 0;
 
               return (
                 <div

@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useRef, useState } from "react";
+import { type ReactNode, createContext, useRef, useState } from "react";
 import { useToast } from "../ui/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { api } from "~/trpc/react";
@@ -74,9 +74,9 @@ export const ChatContextProvider = ({ fileId, children }: Props) => {
             };
           }
 
-          let newPages = [...old.pages];
+          const newPages = [...old.pages];
 
-          let latestPage = newPages[0]!;
+          const latestPage = newPages[0]!;
 
           /* todo: fix ts error */
           latestPage.messages = [
@@ -137,11 +137,11 @@ export const ChatContextProvider = ({ fileId, children }: Props) => {
           (old) => {
             if (!old) return { pages: [], pageParams: [] };
 
-            let isAiResponseCreated = old.pages.some((page) =>
+            const isAiResponseCreated = old.pages.some((page) =>
               page.messages.some((message) => message.id === "ai-response"),
             );
 
-            let updatedPages = old.pages.map((page) => {
+            const updatedPages = old.pages.map((page) => {
               if (page === old.pages[0]) {
                 let updatedMessages;
 
