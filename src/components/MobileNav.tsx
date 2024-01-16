@@ -4,6 +4,7 @@ import { ArrowRight, Menu } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { ModeToggle } from "./ModeToggle";
 
 const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
   const [isOpen, setOpen] = useState<boolean>(false);
@@ -23,7 +24,8 @@ const MobileNav = ({ isAuth }: { isAuth: boolean }) => {
   };
 
   return (
-    <div className="sm:hidden">
+    <div className="flex items-center justify-center gap-2 sm:hidden">
+      <ModeToggle />
       <Menu
         onClick={toggleOpen}
         className="relative z-50 h-5 w-5 text-zinc-700"
